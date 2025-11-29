@@ -1,32 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/7b12bcc245.js" crossorigin="anonymous"></script>
-    <title>Wedding Invite</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/7b12bcc245.js" crossorigin="anonymous"></script>
+        
+        <title>Wedding Invite</title>
+    
+        <style>
+            .music-toggle {
+                position: fixed;
+                bottom: 24px;
+                right: 24px;
+                width: 52px;
+                height: 52px;
+                border-radius: 50%;
+                background: white;
+                color: black;
+                font-size: 24px;
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                z-index: 9999;
+                transition: transform 0.25s ease;
+            }
+    
+            .music-toggle.playing {
+                animation: spin 3s linear infinite;
+            }
+    
+            @keyframes spin {
+                from { transform: rotate(0deg); }
+                to   { transform: rotate(360deg); }
+            }
+        </style>
+    </head>
+    
 <body>
+    <audio id="bg-music" loop>
+        <source src="./music/Queen - The Millionaire Waltz (Official Lyric Video).mp3" type="audio/mp3">
+    </audio>
 
+    <div id="music-btn" class="music-toggle">♫</div>
+
+    
+    <script>
+    const audio = document.getElementById("bg-music");
+    if (sessionStorage.getItem("playMusic") === "yes") {
+        audio.volume = 0.5;
+        audio.play();
+    }
+    </script>
+    
 
     <nav>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <label class="logo">A&G</label>
+        <label class="logo">
+            <img src="img/logo.png" alt="Logo" class="logo-img">
+        </label>
+        
         <ul class="text">
             <li><a href="#story" onclick="myFunction()">OUR STORY</a></li>
-            <li><a href="#stay" onclick="myFunction()">TRAVEL & STAY</a></li>
-            <li><a href="#registry" onclick="myFunction()">PROMISES</a></li>
+            <li><a href="#RSVP" onclick="myFunction()">RSVP</a></li>
+            <li><a href="#prewedding" onclick="myFunction()">super cool vid</a></li>
         </ul>
     </nav>
 
 
-    <div class="home hz-margin">
-        <h3>We'er getting married</h3>
+    <!-- <div class="home hz-margin">
+        <h3>Somehow, We're getting married</h3>
         <h1>Aman. & Gur.</h1>
         <div class="container-out">
             
@@ -38,38 +89,191 @@
             </div>
             <div class="home-img" id="home-img-lg"></div>
         </div>
+    </div> -->
+
+    
+    <div class="home hz-margin">
+        <h3>Guess Who’s Getting Married?</h3>
+        <h1 class="title-small">Christofer & Yovita</h1>
+
+        <div class="container-out">
+            <div class="container-in text">
+                ...And guess again? </br>
+                You are invited!
+
+                <!-- <button class="huge-btn">SAVE THE DATE!</button>
+                https://calendar.app.google/NVsECoaKb8Ghm1Cg7
+                <a href="YOUR_GOOGLE_CAL_LINK"
+                target="_blank"
+                class="save-date-btn">
+                Save the Date
+                </a> -->
+                <a href="https://calendar.app.google/NVsECoaKb8Ghm1Cg7"
+                    target="_blank"
+                    class="huge-btn">
+                    SAVE THE DATE!
+                    </a>
+
+
+            </div>
+
+            <div class="home-img" id="home-img-lg"></div>
+    
+        </div>
     </div>
+    
 
-
+    
     <div class="home-img home-img-sm"></div>
+
     <div class="timeline hz-margin reveal">
-        <h2>Celebrating Our Love <br>
-            With Those We Love
+        <h2>Let's celebrate with us! <br>
         </h2>
         <div class="timeline-container">
             <div class="timeline-img"></div>
             <div class="timings">
                 <h3>01.&nbsp &nbsp Ceremony</h3>
-                <div class="text">Friday, Oct. 20, 2023 <br>
-                    ITC Sonar Bangla, Kolkata</div>
-                <h3>02.&nbsp &nbsp Reception</h3>
-                <div class="text">Sunday, Oct. 22, 2023 <br>
-                    Poddar Vihar, Kolkata</div>
+                <div class="text">Sunday, Dec. 28, 2025 <br>
+                    Gereja St. Paulus Pringgolayan <br>
+                    Mass time: 10 am <br> <br>
+                    <a href="https://maps.app.goo.gl/QN7FtTMmjRtjiKgx8" 
+                    target="_blank" 
+                    class="map-btn">Ceremony Location <br></a>
+                </div>
+             
+                <!-- <h3>02.&nbsp &nbsp Reception</h3>
+                <div class="text">Sunday, Dec. 28, 2025 <br>
+                    Ayala Hall, Pacific Restaurant <br>
+                    Dinner time: 6 pm <br> <br>
+                    <a href="https://maps.app.goo.gl/Ny45LiuEGpceMSq1A" 
+                    target="_blank" 
+                    class="map-btn">Reception Location <br></a>
+                </div> -->
+                <h3>02.&nbsp;&nbsp; Reception</h3>
+
+                    <div class="text">
+                        Sunday, Dec. 28, 2025 <br>
+                        Ayala Hall, Pacific Restaurant <br>
+                        Dinner time: 6 pm <br><br>
+
+                        <a href="https://maps.app.goo.gl/Ny45LiuEGpceMSq1A" 
+                        target="_blank" 
+                        class="map-btn">
+                        Reception Location <br>
+                        </a> <br>
+
+                        <!-- Dresscode -->
+                        <p class="dresscode-label">Dresscode: Dark Colors</p>
+
+                        <div class="dresscode-swatches">
+                            <div class="swatch" style="background-color:#0e0204;"></div>
+                            <div class="swatch" style="background-color:#39040a;"></div>
+                            <div class="swatch" style="background-color:#280137;"></div>
+                            <div class="swatch" style="background-color:#2c041d;"></div>
+                            <div class="swatch" style="background-color:#550000;"></div>
+                        </div>
+                    </div>
+
             </div>
         </div>
     </div>
 
 
+    <!-- ================= MEET THE COUPLE ================= -->
+    <div class="meet-section">
+
+        <h2 class="meet-title">Meet the Groom & Bride</h2>
+
+        <div class="meet-container">
+
+            <!-- Groom -->
+            <div class="meet-card">
+                <img src="img/groom.jpg" class="meet-photo" alt="Groom">
+
+                <h3 class="meet-name">Christofer Julio <br><br></h3>
+
+                <!-- <p class="meet-quote">
+                    The guy who always says “I’m not hungry”<br>
+                    and then steals your fries.
+                </p> -->
+
+                <div class="meet-parents">
+                    <div class="label">THE SON OF:</div>
+                    <div class="names">
+                        Juliantoro Gunawan &<br>
+                        Effi Susi
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bride -->
+            <div class="meet-card">
+                <img src="img/bride.jpg" class="meet-photo" alt="Bride">
+
+                <h3 class="meet-name">Yovita Permata Budi <br><br></h3>
+
+                <!-- <p class="meet-quote">
+                    The girl who takes 200 photos<br>
+                    but only likes 1 of them.
+                </p> -->
+
+                <div class="meet-parents">
+                    <div class="label">THE DAUGHTER OF:</div>
+                    <div class="names">
+                        Budi Suprapto &<br>
+                        Vinis Pudjiastuti
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+
     <div class="v-reposition-container">
         <div class="h-reposition-container">
-
-
             <div id="story" class="hz-margin">
-                <h3 class="reveal">Not Just an <br>
-                    Ordinary Love Story
-                </h3>
-                <p class="text reveal">We met on ferry. Not sure if the kids remember that one. His female housemates encouraged him to get on it - he wasn't keen, but one night we ended up chatting and the next day we met up at the Tellypara Ghat. We spent nine hours together by the river, and I bought him a cotton candy and he says that's how he knew I was the one.</p>
+
+                <!-- LEFT SIDE (title + gallery) -->
+                <div class="story-left reveal">
+                    <h2>Our <br> Love Story</h2>
+            
+                    <div class="story-gallery">
+                        <div class="gallery-wrapper">
+            
+                            <div class="gallery-track">
+                                <img src="img/childhood1.jpeg" class="gallery-item">
+                                <img src="img/childhood2.jpeg" class="gallery-item">
+                                <img src="img/childhood3.jpeg" class="gallery-item">
+                                <img src="img/childhood4.jpeg" class="gallery-item">
+                                <img src="img/childhood5.jpeg" class="gallery-item">
+                            </div>
+                            
+                            <div class="gallery-controls">
+                                <button class="gallery-btn prev">←</button>
+                                <button class="gallery-btn next">→</button>
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- RIGHT SIDE (paragraph) -->
+                <div class="story-right text reveal">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    We’ve been together for so long… we can’t even remember when it all began. <br>
+                    We’ve celebrated fifteen birthdays side by side, and we’re still just as excited to plan the next one. <br>
+                    We’ve grown through milestones, graduations, countless trips, and all the little moments in between. <br>
+                    And three years of long-distance taught us one thing for sure — we really do love being together. <br><br>
+                    Now, we can’t wait to begin the rest of our forever.
+                </div>
+            
             </div>
+            
 
 
             <div class="gallery hz-margin reveal">
@@ -80,70 +284,165 @@
 
 
             <div class="quote reveal">
-                <h1>“To the world you are one person, but to one person you are the world”.</h1>
-                <div class="author text">Anonymous</div>
+                    <h1>“If I have the gift of prophecy and can fathom all mysteries and all knowledge,
+                    and if I have a faith that can move mountains,
+                    but do not have love, I am nothing.”</h1>
+                <div class="author text">— 1 Corinthians 13:2</div>
             </div>
 
 
             <div class="hands" id="parallax1"></div>
 
 
-            <div id="stay">
-                <h2 class="reveal">Travel and Stay</h2>
-                <div class="stay-container reveal">
-                    <div class="stay-item">
-                        <h3>01. <br>
-                            Getting There
-                        </h3>
-                        <div class="text">Easy-to-follow <br> directions to the venue</div>
-                        <div class="text links">MAP & DETAILS</div>
+            <div id="RSVP">
+                <h2 class="reveal">
+                    <br>
+                    <!-- <br> -->
+                    RSVP & Wedding Gift</h2>
+            
+                <div class="stay-container reveal two-column">
+            
+                    <div class="stay-item card">
+                        <h3>RSVP</h3>
+                    
+                        <p class="text">
+                            Kindly fill in the RSVP form below 
+                            make our lives easier 😇
+                        </p>
+                    
+                        <div class="rsvp-form-container">
+                            <iframe 
+                                id="rsvp-iframe"
+                                class="rsvp-iframe"
+                                src="" 
+                                frameborder="0"
+                                marginheight="0"
+                                marginwidth="0">
+                            </iframe>
+                        </div>
+                        
                     </div>
-                    <div class="stay-item">
-                        <h3>02. <br>
-                            Once You're There
-                        </h3>
-                        <div class="text">Some fun things to do in <br> the area</div>
-                        <div class="text links">OUR RECOMMENDATIONS</div>
+                    
+
+                    <div class="stay-item card">
+                        <h3>Wedding Gift</h3>
+                        <p class="text">
+                            Your presence is the greatest gift, but if you are feeling generous,
+                            here's how you can contribute to our Netflix subscription bills.
+                        </p>
+                        <a class="action-btn gift-button">
+                            View Gift Options
+                        </a>
+                                      
                     </div>
-                    <div class="stay-item">
-                        <h3>03. <br>
-                            Where to Stay
-                        </h3>
-                        <div class="text">Hotels and B&Bs <br> to check out</div>
-                        <div class="text links">LODGING OPTIONS</div>
-                    </div>
+            
                 </div>
             </div>
+            
+            <div id="prewedding" class="prewedding-section">
 
+                <h2 class="prewedding-title">
+                    The Last Trip Before We Sign the Lifetime Subscription 😭💕
+                </h2>
 
-            <div id="registry">
-                <div class="registry-container reveal">
-                    <h3>Promises</h3>
-                    <div class="text">
-                        I will provide welfare and happiness for you and the children that we bear and you shall offer me food and help whenever it is required. Together, we will protect our children and home and stand as each other's strength and courage. I will put every other person secodary to you. You make my like complete and promise to respect you. God bless you, my best friend. I pray thee, may my presence fill our life with joy and prospers.
-                    </div>
-                    <button class="huge-btn text">BLESS US</button>
+                <div class="video-wrapper" style="margin-top: 20px;">
+                    <iframe 
+                        src="https://www.youtube.com/embed/VIDEO_ID?rel=0&controls=1"
+                        frameborder="0"
+                        allowfullscreen>
+                    </iframe>
                 </div>
-                <div class="registry-img registry-img-lg" id="parallax2"></div>
+            
             </div>
-            <div class="registry-img registry-img-sm"></div>
-
+            
+            
+                <!-- <div class="registry-img registry-img-lg" id="parallax2"></div> -->
+            <!-- </div> -->
+            
+            <!-- <div class="registry-img registry-img-sm"></div> -->
+            
+            
+            <div class="auto-gallery">
+                <div class="auto-track">
+                    <!-- Original set -->
+                    <img src="img/gallery_last1.jpg" class="auto-item">
+                    <img src="img/gallery_last2.jpg" class="auto-item">
+                    <img src="img/gallery_last3.jpg" class="auto-item">
+                    <img src="img/gallery_last4.jpg" class="auto-item">
+            
+                    <!-- Duplicate set for smooth loop -->
+                    <img src="img/gallery_last1.jpg" class="auto-item">
+                    <img src="img/gallery_last2.jpg" class="auto-item">
+                    <img src="img/gallery_last3.jpg" class="auto-item">
+                    <img src="img/gallery_last4.jpg" class="auto-item">
+                </div>
+            </div>
+            
+            
+            <!-- ganti biar ga kapital nama merk -->
 
             <div class="parting-message reveal">
-                <h1>Hope to See You!</h1>
-                <button class="huge-btn">RSVP</button>
+                <h1>We expect you… <br>
+                    yes, YOU <br>
+                    👀❤️</h1>
+
             </div>
 
-
+            <!-- ganti biar ga kapital nama merk -->
             <footer>
-                <h2>Give us a Call</h2>
-                <h2>Amandeep: 123-456-7890</h2>
-                <h2>Gurpreet: 123-456-7890</h2>
-                <div class="text">© 2023 for Aman and Gur. Made by <a href="https://twitter.com/NathArchak" class="text">@NathArchak</a></div>
+                <h2>Best Regards</h2>
+                <h2>Christofer Julio</h2>
+                <h2>Yovita Permata Budi</h2>
+                <div class="text">
+                    © 2025 for our wedding. 
+                    <br>Made by 
+                    <a href="https://github.com/christoferjulio3" class="text">Me</a>
+                    <a href="https://scholar.google.com/citations?user=vJJ-qykAAAAJ&hl=en" class="text">, with a little help from my friend</a>
+                    <!-- and
+                    <a href="https://google.com" class="text">another friend</a>. -->
+                </div>
+                
             </footer>
         </div>
     </div>
 
+
+<!-- ============ GIFT ============ -->
+<div id="gift-modal" class="gift-modal">
+    <div class="gift-modal-content">
+
+        <span class="gift-close">&times;</span>
+
+        <h3>Wedding Gift Details</h3>
+
+        <div class="gift-info">
+            <br>
+            <strong>Bank Name:</strong> BCA <br>
+            <strong>Account Name:</strong> Christofer Julio <br>
+            <strong>Account Number:</strong> 
+            <span class="account-number" data-acc="6975573544">6975573544 </span>  <br>
+            <button class="copy-btn" data-copy="6975573544">Copy</button>
+            <br><br>
+
+            <strong>Bank Name:</strong> Chunghwa Post Bank <br>
+            <strong>Account Name:</strong> Christofer Julio <br>
+            <strong>Account Number:</strong> 
+            <span class="account-number" data-acc="00026260510216">00026260510216</span> <br>
+            <button class="copy-btn" data-copy="00026260510216">Copy</button>
+        </div>
+
+        <p style="margin-top: 1rem;">❤️Thank you for your kind blessing❤️</p>
+    </div>
+</div>
+
+
     <script src="main.js"></script>
+    <script src="rsvp.js"></script>
+    <script src="gift.js"></script>
+
+
 </body>
+
+
+
 </html>
