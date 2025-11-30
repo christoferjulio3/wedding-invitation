@@ -89,7 +89,7 @@
 
 <!-- Background video -->
 <video autoplay loop muted playsinline class="bg-video">
-    <source src="./vid/opening.mp4" type="video/mp4">
+    <source src="vid/opening.mp4" type="video/mp4">
 </video>
 
 <!-- Dark overlay -->
@@ -121,7 +121,7 @@
     const guestID = urlParams.get("guest");
     
 // to load guest name
-    fetch("./data/guest.json")
+    fetch("data/guest.json")
       .then(response => response.json())
       .then(data => {
         const guestNameBox = document.getElementById("guest-name");
