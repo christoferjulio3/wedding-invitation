@@ -818,8 +818,9 @@ a:hover{
     width: 100%;
     max-width: 900px;   /* center width on PC */
     margin: 0 auto;
-    padding-bottom: 56.25%; /* 16:9 ratio */
+    padding-bottom: 56.25% !important; /* 16:9 ratio */
     height: 0;
+    overflow: hidden;
 }
 
 /* Responsive iframe */
@@ -832,7 +833,12 @@ a:hover{
     border-radius: 12px;
 }
 
+@media (max-width: 600px) {
+    .video-wrapper {
+        max-width: 90%;
+    }
 
+}
 
 /* autogallery */
 
