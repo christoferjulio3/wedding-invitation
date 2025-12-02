@@ -490,5 +490,9 @@
     "g123": {
         "guest_name": "Clifford Erikson Kwandang",
         "num_pax":2
+    },
+    "g124": {
+        "guest_name": "Georgeus Heri Pitarso",
+        "num_pax":2
     }
 }
