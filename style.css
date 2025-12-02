@@ -812,32 +812,26 @@ a:hover{
     margin-bottom: 2rem;
 }
 
-/* Fullscreen center video container */
+/* Clean responsive video container */
 .video-wrapper {
-    position: relative;
     width: 100%;
-    max-width: 900px;   /* center width on PC */
-    margin: 0 auto;
-    padding-bottom: 56.25% !important; /* 16:9 ratio */
-    height: 0;
-    overflow: hidden;
+    max-width: 900px;
+    margin: 20px auto 0 auto; /* keep your top margin */
 }
 
-/* Responsive iframe */
-.video-wrapper iframe {
-    position: absolute;
-    top: 0; 
-    left: 0;
+/* Responsive video element */
+.video-wrapper .video-file {
     width: 100%;
-    height: 100%;
+    height: auto;
+    display: block;
     border-radius: 12px;
 }
 
+/* Mobile adjustments */
 @media (max-width: 600px) {
     .video-wrapper {
         max-width: 90%;
     }
-
 }
 
 /* autogallery */
