@@ -494,5 +494,21 @@
     "g124": {
         "guest_name": "Georgeus Heri Pitarso",
         "num_pax":2
+    },
+    "g125": {
+        "guest_name": "Entzu",
+        "num_pax":2
+    },
+    "g126": {
+        "guest_name": "Manda",
+        "num_pax":2
+    },
+    "g127": {
+        "guest_name": "Xian Wei",
+        "num_pax":2
+    },
+    "g128": {
+        "guest_name": "Yi-fan Jiang",
+        "num_pax":2
     }
 }
