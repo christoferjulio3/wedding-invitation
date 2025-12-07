@@ -547,4 +547,12 @@
         "guest_name": "Bela Graha Satya",
         "num_pax":4
     },
+    "g138": {
+        "guest_name": "Arbi Witarso",
+        "num_pax": 4
+    },
+    "g139": {
+        "guest_name": "Filipus Gilang Wicaksono",
+        "num_pax": 2
+    }
 }
